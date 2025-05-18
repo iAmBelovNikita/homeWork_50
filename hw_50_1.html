@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="hw_50_1.css">
+</head>
+<body>
+
+<div id="app"></div>
+
+<script type="text/babel">
+
+    const Film = (props) => {
+        const {name, age, image, pgRating, duration, imdbLink} = props;
+
+        return (
+            <div className="film">
+                <h1 align="center">{name}</h1>
+                <hr/>
+                <img className="poster" src={image} alt={'Poster of' + name} width="300px"/>
+                <div className="addInfo">
+                    <p>Year: {age} | <span>{pgRating}</span> | {duration}</p>
+                    <a target="_blank" href={imdbLink}>IMDb</a>
+                </div>
+            </div>
+        );
+    };
+
+   const rootElement = document.getElementById('app');
+
+   ReactDOM.createRoot(rootElement).render(
+    <>
+        <Film name={'Mr. Nobody'} age={2009} pgRating={'R'} duration={'2h 21m'} image={'https://upload.wikimedia.org/wikipedia/en/3/32/Mr._Nobody_%28film_poster%29.jpg'} imdbLink="https://www.imdb.com/title/tt0485947/"/>
+        <Film name={'8 Mile'} age={2002} pgRating={'R'} duration={'1h 50m'} image={'https://upload.wikimedia.org/wikipedia/en/8/8b/Eight_mile_ver2.jpg'} imdbLink="https://www.imdb.com/title/tt0298203/"/>
+        <Film name={'The Green Mile'} age={1999} pgRating={'R'} duration={'3h 9m'} image={'https://upload.wikimedia.org/wikipedia/en/e/e2/The_Green_Mile_%28movie_poster%29.jpg'} imdbLink={'https://www.imdb.com/title/tt0120689/'}/>
+    </>
+   )
+
+</script>
+</body>
+</html>

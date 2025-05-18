@@ -1,0 +1,57 @@
+#app {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    place-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.film {
+    display: block;
+    margin: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px #ccc;
+    max-width: 350px;
+    padding: 20px 20px 5px;
+}
+
+.addInfo {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 10px;
+}
+
+.poster {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+p {
+    color: #7c7c7c;
+    font-size: 12px;
+    margin: 0;
+    display: inline-block;
+    border-bottom: 1px solid #eee;
+}
+
+p span {
+    color: #9e0000;
+}
+
+h1 {
+    margin: 0;
+}
+
+hr {
+    margin: 10px 0 20px;
+}
+
+a {
+    display: inline-block;
+    color: #00819e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+}
