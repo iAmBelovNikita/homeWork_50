@@ -1,0 +1,156 @@
+body {
+    font-family: sans-serif;
+    font-optical-sizing: auto;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #070c11;
+    background: #fff;
+    line-height: 1.3;
+    max-width: 1330px;
+    min-width: 550px;
+}
+
+.container {
+    max-width: 1330px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.content {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    background: rgba(255, 235, 135, 0.76);
+    padding: 0 20px 20px;
+    width: 150px;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 5px;
+    color: #009e9e;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0;
+}
+
+.header {
+    background: rgba(255, 235, 135, 0.76);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.headerContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: center;
+}
+
+.headerNav {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.wrapperDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.film {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px #ccc;
+    max-width: 350px;
+    padding: 20px 20px 5px;
+}
+
+.addInfo {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 10px;
+}
+
+.poster {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+.footer {
+    background: rgba(255, 235, 135, 0.76);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    color: #7c7c7c;
+    font-size: 12px;
+    margin: 0;
+    display: inline-block;
+    border-bottom: 1px solid #eee;
+}
+
+p span {
+    color: #9e0000;
+}
+
+h1 {
+    margin: 0;
+}
+
+hr {
+    margin: 10px 0 20px;
+}
+
+a {
+    display: inline-block;
+    color: #00819e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 950px) {
+    .content {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+
+}
+@media screen and (max-width: 750px) {
+    .headerNav {
+        display: none;
+    }
+
+    .headerName {
+        text-align: center;
+    }
+
+}

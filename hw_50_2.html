@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="hw_50_2.css">
+</head>
+<body>
+
+<div id="app"></div>
+
+<script type="text/babel">
+
+  const Film = (props) => {
+    const {name, age, image, pgRating, duration, imdbLink} = props;
+
+    return (
+            <div className="film">
+              <h1 align="center">{name}</h1>
+              <hr/>
+              <img className="poster" src={image} alt={'Poster of' + name} width="300px"/>
+              <div className="addInfo">
+                <p>Year: {age} | <span>{pgRating}</span> | {duration}</p>
+                <a target="_blank" href={imdbLink}>IMDb</a>
+              </div>
+            </div>
+    );
+  };
+
+  const Site = (props) => {
+    return (
+            <>
+                <header className="header">
+                  <div className="container headerContainer">
+                    <h1 className="headerName">My last watching movies and series</h1>
+                    <nav className="headerNav">
+                      <a href="hw_50_1.html">Top 3 movies</a> | <a href="https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm">Most popular movies</a> | <a href="#">Contact</a>
+                    </nav>
+                  </div>
+                </header>
+
+                <main className="main container">
+                  <aside className="sidebar">
+                    <h2>Genres</h2>
+                    <ul>
+                      <li><a href="#">Drama</a></li>
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Comedy</a></li>
+                      <li><a href="#">Sci-Fi</a></li>
+                    </ul>
+                    <h2>Year</h2>
+                    <ul>
+                      <li><a href="#">before 2000</a></li>
+                      <li><a href="#">2000 - 2010</a></li>
+                      <li><a href="#">2011 - 2020</a></li>
+                      <li><a href="#">after 2021</a></li>
+                    </ul>
+                    <h2>Age Rating</h2>
+                    <ul>
+                      <li><a href="#">G</a></li>
+                      <li><a href="#">R</a></li>
+                      <li><a href="#">PG</a></li>
+                      <li><a href="#">PG-13</a></li>
+                      <li><a href="#">TV-MA</a></li>
+                    </ul>
+                  </aside>
+
+                  <div className="content">
+                    {props.children}
+                  </div>
+
+                </main>
+
+                <footer className="footer">
+                  <div className="container">
+                   <p>&copy; Made by Nikita Belov.</p>
+                  </div>
+                </footer>
+            </>
+    );
+  };
+
+
+  const rootElement = document.getElementById('app');
+
+  ReactDOM.createRoot(rootElement).render(
+
+            <Site>
+              <Film name={'Squid Game'} age={'2021-2025'} pgRating={'TV-MA'} duration={'1h - ep'} image={'https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Squid_Game_season_2_poster.png/250px-Squid_Game_season_2_poster.png'} imdbLink="https://www.imdb.com/title/tt10919420/"/>
+              <Film name={'The Walking Dead'} age={"2010-2022"} pgRating={'TV-MA'} duration={'45m - ep'} image={'https://m.media-amazon.com/images/M/MV5BYWQwMGRhNGEtZTNhMy00MzVjLWJhMjItYjcwMDljMTkyNTg2XkEyXkFqcGc@._V1_.jpg'} imdbLink="https://www.imdb.com/title/tt1520211/"/>
+              <Film name={'The Fall of the House of Usher'} age={2023} pgRating={'TV-MA'} duration={'1h - ep'} image={'https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Netflix_Fall_of_House_of_Usher_series.png/250px-Netflix_Fall_of_House_of_Usher_series.png'} imdbLink={'https://www.imdb.com/title/tt15567174/'}/>
+              <Film name={"Hachi: A Dog's Tale"} age={2009} pgRating={'G'} duration={'1h 33m'} image={'https://m.media-amazon.com/images/M/MV5BNTU5NjYyYTgtZGQ3My00MzRhLThjNGYtZmVjN2JjYjhkMjhhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg'} imdbLink={'https://www.imdb.com/title/tt1028532/'}/>
+            </Site>
+  )
+
+</script>
+</body>
+</html>
